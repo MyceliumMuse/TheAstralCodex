@@ -1,0 +1,30 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "QCS Development Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11", // Choose a specific Python version
+      "installJupyterlab": true, // Install JupyterLab for data analysis and ML
+    },
+    "ghcr.io/devcontainers/features/qiskit:1": {
+      "version": "latest" // Latest Qiskit for quantum computing
+    }
+  },
+  "postCreateCommand": "pip install pennylane", // Additional Python dependencies
+
+  // Optional: Uncomment if you need browser testing
+  // "forwardPorts": [8080],
+  // "postStartCommand": "python -m http.server 8080",
+
+  // Install browser extension
+  // "extensions": [
+  //   "msjsdiag.debugger-for-chrome" // Example for debugging Chrome extension
+  // ],
+
+  // Set environment variables
+  "remoteEnv": {
+    "GOOGLE_CLOUD_API_KEY": "your_api_key", // Replace with your actual API key
+    "AZURE_TEXT_ANALYTICS_KEY": "your_api_key" // Replace with your actual API key
+  }
+}
